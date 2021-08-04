@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="first"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Speed</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item>
+    <ion-label position="floating">Enter value:</ion-label>
+    <ion-input [(ngModel)]="inputSpeed" type="number"></ion-input>
+  </ion-item>
+
+  <ion-grid> 
+    <ion-row>
+      <ion-col>
+        <div>
+          <ion-label>From</ion-label>
+          <ion-select [(ngModel)]="inputUnit">
+            <ion-select-option value="m/s">m/s</ion-select-option>
+            <ion-select-option value="km/h">km/h</ion-select-option>
+            <ion-select-option value="mph/h">mph</ion-select-option>
+          </ion-select>
+        </div>
+      </ion-col>
+
+      <ion-col>
+        <div>
+          <ion-label>To</ion-label>
+          <ion-select [(ngModel)]="outputUnit">
+            <ion-select-option value="m/s">m/s</ion-select-option>
+            <ion-select-option value="km/h">km/h</ion-select-option>
+            <ion-select-option value="mph/h">mph</ion-select-option>
+          </ion-select>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-item>
+    <div class="output">
+      {{ outpuString }}
+    </div>
+  </ion-item>
+  
+
+  <ion-button (click)="convert()" expand="block" color="primary">Convert</ion-button>
+  <ion-button (click)="clear()" expand="block" color="primary">Clear</ion-button>
+
+</ion-content>

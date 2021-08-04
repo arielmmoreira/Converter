@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Unit converter
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,12 +9,15 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Unit converter</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <p>Welcome! Choose a unit to compute!</p>
+
+  <ion-button [routerLink]="['/data']" color="medium">Data Size</ion-button>
+  <ion-button [routerLink]="['/temperature']" color="medium">Temperature</ion-button>
+  <ion-button [routerLink]="['/speed']" color="medium">Speed</ion-button>
+
 </ion-content>
+

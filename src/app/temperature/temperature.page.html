@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="first"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Temperature</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item>
+    <ion-label position="floating">Enter value:</ion-label>
+    <ion-input [(ngModel)]="inputTemp" type="number"></ion-input>
+  </ion-item>
+
+  <ion-grid> 
+    <ion-row>
+      <ion-col>
+        <div>
+          <ion-label>From</ion-label>
+          <ion-select [(ngModel)]="inputScale">
+            <ion-select-option value="C">Celsius</ion-select-option>
+            <ion-select-option value="F">Farenheit</ion-select-option>
+            <ion-select-option value="K">Kelvin</ion-select-option>
+          </ion-select>
+        </div>
+      </ion-col>
+
+      <ion-col>
+        <div>
+          <ion-label>To</ion-label>
+          <ion-select [(ngModel)]="outputScale">
+            <ion-select-option value="C">Celsius</ion-select-option>
+            <ion-select-option value="F">Farenheit</ion-select-option>
+            <ion-select-option value="K">Kelvin</ion-select-option>
+          </ion-select>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-item>
+    <div class="output">
+      {{ outputString }}
+    </div>
+  </ion-item>
+  
+
+  <ion-button (click)="convert()" expand="block" color="primary">Convert</ion-button>
+  <ion-button (click)="clear()" expand="block" color="primary">Clear</ion-button>
+
+</ion-content>

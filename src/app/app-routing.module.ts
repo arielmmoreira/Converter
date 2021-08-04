@@ -11,6 +11,18 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'data',
+    loadChildren: () => import('./data/data.module').then( m => m.DataPageModule)
+  },
+  {
+    path: 'temperature',
+    loadChildren: () => import('./temperature/temperature.module').then( m => m.TemperaturePageModule)
+  },
+  {
+    path: 'speed',
+    loadChildren: () => import('./speed/speed.module').then( m => m.SpeedPageModule)
+  },
 ];
 
 @NgModule({
