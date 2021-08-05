@@ -33,7 +33,7 @@ export class TemperaturePage{
    }
 
    private isValidInputTemp(){
-    if (this.inputTemp <= 0 || this.inputTemp == null){
+    if (this.inputTemp == null){
       this.presentToast("Invalid input");
       return false;
     }
@@ -62,7 +62,7 @@ export class TemperaturePage{
   
   private farenheitToScale(scale){
     if (scale == "C"){
-      this.outputTemp = (this.inputTemp - 32) * 1.8;
+      this.outputTemp = (this.inputTemp - 32) * (5 / 9);
     } else if (scale == "K"){
       this.outputTemp = (this.inputTemp - 32) * (5 / 9) + 273;
     } else {
@@ -79,11 +79,11 @@ export class TemperaturePage{
     }
 
     if (this.outputScale == "C" || this.inputScale == "F"){
-      output = "°" + this.inputScale;
+      output = "°" + this.outputScale;
     } else {
       output = this.outputScale;
     }  
-    this.outputString = this.inputTemp.toString() + "" + input +  " = " + this.outputTemp.toString() + output;
+    this.outputString = this.inputTemp.toString() + "" + input +  " = " + this.outputTemp.toFixed(1).toString() + output;
   }
 
   public convert(){
@@ -97,7 +97,6 @@ export class TemperaturePage{
       }
       this.setOutputString();
     }
-    
   }
 
   public clear(){

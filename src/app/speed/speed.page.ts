@@ -14,7 +14,9 @@ export class SpeedPage {
   outputSpeed = 0;
   outpuString = "";
 
-  constructor(public toastController: ToastController) { }
+  constructor(public toastController: ToastController) { 
+    
+  }
 
   convert(){
     if (this.isValidInputSpeed() && this.isValidUnit()){
@@ -81,7 +83,7 @@ export class SpeedPage {
   }
 
   private setOutputString(){
-    this.outpuString = this.inputSpeed.toString() + this.inputUnit + " = " + this.outputSpeed.toString() + this.outputUnit;
+    this.outpuString = this.inputSpeed.toString() + this.inputUnit + " = " + this.outputSpeed.toFixed(1).toString() + this.outputUnit;
   }
 
   private async presentToast(msg) {

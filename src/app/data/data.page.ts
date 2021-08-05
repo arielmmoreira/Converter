@@ -9,10 +9,10 @@ import { ToastController } from '@ionic/angular';
 export class DataPage {
 
   ratio = 1024;
-  inputValue:number;
+  inputValue = null;
   inputSize = "";
   outputSize = "";
-  outputValue:number;
+  outputValue = 0;
   outputString = "";
   sizeList = ["Byte", "KB", "MB", "GB"];
 
@@ -23,6 +23,8 @@ export class DataPage {
       this.setOutputValue();
       this.setOutputString();
     }
+    console.log(this.outputValue);
+    console.log(this.outputValue.toString());
   }
   
   public clear(){
